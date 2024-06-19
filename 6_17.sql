@@ -26,3 +26,19 @@ WHERE Color is NOT NULL AND ListPrice > 0
 SELECT Name + ' ' + Color
 FROM Production.Product
 WHERE Color is NOT NULL
+
+-- QUESTION 7
+SELECT 'NAME: ' + Name + ' -- COLOR: ' + Color AS NameAndColor
+FROM Production.Product
+WHERE (Name LIKE '% Crankarm' OR Name LIKE 'Chainring%') AND Color IN ('Black', 'Silver') 
+
+-- QUESTION 8
+SELECT ProductID, Name
+FROM Production.Product
+WHERE ProductID BETWEEN 400 AND 500
+
+-- QUESTION 9
+SELECT ProductID, Name, Color
+FROM Production.Product
+WHERE Color = 'Black' OR Color = 'Blue'
+
