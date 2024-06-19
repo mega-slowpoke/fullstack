@@ -42,3 +42,24 @@ SELECT ProductID, Name, Color
 FROM Production.Product
 WHERE Color = 'Black' OR Color = 'Blue'
 
+-- QUESTION 10
+SELECT ProductID, Name, Color
+FROM Production.Product
+WHERE Name LIKE 'S%'
+
+-- QUESTION 11
+SELECT Name, ListPrice
+FROM Production.Product
+ORDER BY Name
+
+-- QUESTION 12
+SELECT Name, ListPrice
+FROM Production.Product
+WHERE Name LIKE '[AS]%'
+ORDER BY Name
+
+-- QUESTION 12
+SELECT Name, ListPrice
+FROM Production.Product
+WHERE Name LIKE '[AS]%'
+ORDER BY Name
