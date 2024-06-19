@@ -53,13 +53,26 @@ FROM Production.Product
 ORDER BY Name
 
 -- QUESTION 12
-SELECT Name, ListPrice
+SELECT Name
 FROM Production.Product
 WHERE Name LIKE '[AS]%'
 ORDER BY Name
 
--- QUESTION 12
-SELECT Name, ListPrice
+-- QUESTION 13
+SELECT Name
 FROM Production.Product
-WHERE Name LIKE '[AS]%'
+WHERE Name LIKE 'SPO[^K]%'
 ORDER BY Name
+
+-- QUESTION 14
+SELECT DISTINCT Color
+FROM Production.Product
+ORDER BY Color DESC
+
+-- QUESTION 15
+-- it doesn't specify in what way we should sort the data
+-- So I just sort by id and color(if ids are the same)
+SELECT DISTINCT ProductSubcategoryID, Color
+FROM Production.Product
+WHERE ProductSubcategoryID IS NOT NULL AND Color IS NOT NULL
+ORDER BY ProductSubcategoryID, Color
