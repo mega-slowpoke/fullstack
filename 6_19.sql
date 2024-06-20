@@ -45,14 +45,38 @@ GROUP BY ProductID
 -- QUESTION 9
 SELECT ProductID, Shelf, AVG(Quantity) AS Average
 FROM Production.ProductInventory
-WHERE Shelf IS NOT NULL
 GROUP BY ProductID, Shelf
 
+
 -- QUESTION 10
+SELECT ProductID, Shelf, AVG(Quantity) AS Average
+FROM Production.ProductInventory
+WHERE NOT Shelf = 'N/A'
+GROUP BY ProductID, Shelf
+
 -- QUESTION 11
+SELECT Color, Class, COUNT(ProductID) AS TheCount, AVG(ListPrice) AS AvgPrice
+FROM Production.Product
+WHERE Color IS NOT NULL AND Class IS NOT NULL
+GROUP BY Color, Class
+
 -- QUESTION 12
+SELECT cr.Name AS CountryRegion, sp.Name AS StateProvince
+FROM Person.CountryRegion cr 
+	LEFT JOIN Person.StateProvince sp 
+	ON cr.CountryRegionCode = sp.CountryRegionCode 
+
 -- QUESTION 13
+SELECT cr.Name AS CountryRegion, sp.Name AS StateProvince
+FROM Person.CountryRegion cr 
+	LEFT JOIN Person.StateProvince sp 
+	ON cr.CountryRegionCode = sp.CountryRegionCode 
+WHERE cr.Name IN ('Germany', 'Canada')
+
+
 -- QUESTION 14
+SELECT 
+
 -- QUESTION 15
 -- QUESTION 16
 -- QUESTION 17
