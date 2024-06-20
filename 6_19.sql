@@ -30,8 +30,25 @@ GROUP BY ProductID
 HAVING SUM(Quantity) < 100
 
 -- QUESTION 7
+SELECT Shelf, ProductID, SUM(Quantity) AS TheSum
+FROM Production.ProductInventory
+WHERE LocationID = 40 
+GROUP BY Shelf, ProductID
+HAVING SUM(Quantity) < 100
+
 -- QUESTION 8
+SELECT ProductID, AVG(Quantity) AS Average
+FROM Production.ProductInventory
+WHERE LocationID = 10
+GROUP BY ProductID
+
 -- QUESTION 9
+SELECT ProductID, Shelf, AVG(Quantity) AS Average
+FROM Production.ProductInventory
+WHERE Shelf IS NOT NULL
+GROUP BY ProductID, Shelf
+
+
 -- QUESTION 10
 -- QUESTION 11
 -- QUESTION 12

@@ -1,0 +1,15 @@
+### SQL Basic
+
+#### WHERE vs HAVING
+
+
+### SQL EXECUTION ORDER
+
+    SELECT
+    FROM JOIN
+    WHERE
+    GROUP BY
+    HAVING
+    ORDER BY
+
+FROM/JOIN --> WHERE --> GROUP BY --> HAVING --> SELECT --> DISTINCT --> ORDER BY
