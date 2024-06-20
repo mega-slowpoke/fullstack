@@ -75,7 +75,6 @@ WHERE cr.Name IN ('Germany', 'Canada')
 
 
 -- QUESTION 14
-SELECT 
 
 -- QUESTION 15
 -- QUESTION 16
