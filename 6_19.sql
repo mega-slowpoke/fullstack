@@ -48,7 +48,6 @@ FROM Production.ProductInventory
 WHERE Shelf IS NOT NULL
 GROUP BY ProductID, Shelf
 
-
 -- QUESTION 10
 -- QUESTION 11
 -- QUESTION 12
