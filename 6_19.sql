@@ -1,3 +1,5 @@
+USE AdventureWorks2019
+GO
 -- QUESTION 1
 SELECT COUNT(ProductID) AS TotalNum
 FROM Production.Product
@@ -74,7 +76,16 @@ FROM Person.CountryRegion cr
 WHERE cr.Name IN ('Germany', 'Canada')
 
 
+USE Northwind
+GO
 -- QUESTION 14
+SELECT p.ProductName, o.OrderDate
+FROM Products p JOIN Orders o JOIN [Order Details] od ON o.OrderID = od.OrderID ON p.ProductID = od.ProductID
+
+
+
+
+SELECT * FROM [Order Details]
 
 -- QUESTION 15
 -- QUESTION 16
@@ -91,13 +102,5 @@ WHERE cr.Name IN ('Germany', 'Canada')
 -- QUESTION 27
 
 
--- QUESTION 5
--- QUESTION 5
--- QUESTION 5
--- QUESTION 5
--- QUESTION 5
--- QUESTION 5
--- QUESTION 5
--- QUESTION 5
 
 
