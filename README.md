@@ -45,3 +45,21 @@ However, there is one case where subquery outpeforms join. That is join used ***
 A correlated subquery can get the same result without GROUP BY. GROUP BY is so expensive that it makes join way less efficient
 
 Correlated subquery: an inner query dependent on the outer query
+
+
+#### derived table
+A subquery after in a FROM clause we have to give derived table an alias
+
+
+### UNION vs. UNION ALL
+Similarity:
+1. number of columns should be same
+2. data type should be the same
+
+Diff:
+1. union will remove duplicates
+2. union will sort the first column ascedening automactially
+3. union cannot used be in recursively cte
+
+
+## Window Function
