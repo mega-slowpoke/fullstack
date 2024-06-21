@@ -22,21 +22,34 @@ FROM Orders o JOIN [Order Details] od ON o.OrderID = od.OrderID JOIN Products p 
 GROUP BY p.ProductID, p.ProductName
 
 -- QUESTION 4
-SELECT c.City, COUNT(*) AS TotalNum
-FROM Orders o JOIN Customers c ON c.City = o.ShipCity
-GROUP BY c.City
+
 
 -- QUESTION 5
 
 
 -- QUESTION 6
+SELECT c.City, od.ProductID, COUNT(*) AS TotalNum
+FROM Orders o JOIN Customers c ON c.City = o.ShipCity JOIN [Order Details] od ON od.OrderID = o.OrderID
+GROUP BY c.City, od.ProductID
+HAVING COUNT(*) = 2
 
 -- QUESTION 7
+SELECT DISTINCT c.CustomerID, c.City, o.ShipCity
+FROM Customers c JOIN Orders o ON o.CustomerID = c.CustomerID
+WHERE c.City <> o.ShipCity
 
 -- QUESTION 8
+--SELECT dt.ProductID
+-- FROM (
+-- SELECT od.ProductID, COUNT(od.ProductID), AVG(od.UnitPrice * od.Quantity)
+-- FROM Orders o JOIN [Order Details] od ON od.OrderID = o.OrderID
+-- GROUP BY od.ProductID
+-- ORDER BY COUNT(od.ProductID) DESC
+-- ) AS dt
 
 -- QUESTION 9
 
 -- QUESTION 10
 
 -- QUESTION 11
+-- We can use DISTINCT keyword
