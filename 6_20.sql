@@ -63,8 +63,21 @@ FROM Top5ProductInfo t JOIN CityQuantities c ON t.ProductID = c.ProductID
 WHERE c.RowNum = 1
 
 -- QUESTION 9
+---- Use sub-query
+SELECT DISTINCT City
+FROM Employees
+WHERE City NOT IN 
+(SELECT DISTINCT City 
+FROM Customers 
+WHERE CustomerID IN (SELECT CustomerID FROM Orders))
+---- Do not use sub-query
+SELECT e.City
+FROM Employees e LEFT JOIN (Customers c JOIN Orders o ON c.CustomerID = o.CustomerID) ON e.City = c.City
+WHERE c.CustomerID IS NULL
 
 -- QUESTION 10
+
+
 
 -- QUESTION 11
 -- We can use DISTINCT keyword
