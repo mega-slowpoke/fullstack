@@ -17,7 +17,7 @@ FROM Customers c LEFT JOIN Employees e ON c.City = e.City
 WHERE e.City IS NULL
 
 -- QUESTION 3
-SELECT p.ProductID, p.ProductName, COUNT(*) AS TotalNum
+SELECT p.ProductID, p.ProductName, SUM(od.Quantity) AS TotalNum
 FROM Orders o JOIN [Order Details] od ON o.OrderID = od.OrderID JOIN Products p ON od.ProductID = p.ProductID 
 GROUP BY p.ProductID, p.ProductName
 
@@ -28,10 +28,6 @@ GROUP BY p.ProductID, p.ProductName
 
 
 -- QUESTION 6
-SELECT c.City, od.ProductID, COUNT(*) AS TotalNum
-FROM Orders o JOIN Customers c ON c.City = o.ShipCity JOIN [Order Details] od ON od.OrderID = o.OrderID
-GROUP BY c.City, od.ProductID
-HAVING COUNT(*) = 2
 
 -- QUESTION 7
 SELECT DISTINCT c.CustomerID, c.City, o.ShipCity
@@ -39,13 +35,23 @@ FROM Customers c JOIN Orders o ON o.CustomerID = c.CustomerID
 WHERE c.City <> o.ShipCity
 
 -- QUESTION 8
---SELECT dt.ProductID
--- FROM (
--- SELECT od.ProductID, COUNT(od.ProductID), AVG(od.UnitPrice * od.Quantity)
--- FROM Orders o JOIN [Order Details] od ON od.OrderID = o.OrderID
--- GROUP BY od.ProductID
--- ORDER BY COUNT(od.ProductID) DESC
--- ) AS dt
+WITH Top5ProductInfo AS (
+SELECT TOP 5 od.ProductID, ROUND(AVG(od.UnitPrice * od.Quantity * (1- od.Discount)), 2) AS AvgPrice
+FROM Orders o JOIN [Order Details] od ON od.OrderID = o.OrderID
+GROUP BY od.ProductID
+ORDER BY SUM(od.Quantity) DESC
+),
+
+CityQuantities AS (
+SELECT od.ProductID, c.City, SUM(od.Quantity) AS CityQuantity, ROW_NUMBER() OVER(PARTITION BY od.ProductID ORDER BY SUM(od.Quantity) DESC) AS RowNum
+FROM Orders o JOIN [Order Details] od ON od.OrderID = o.OrderID JOIN Customers c ON c.CustomerID = o.CustomerID
+WHERE od.ProductID IN (SELECT ProductID FROM Top5ProductInfo)
+GROUP BY od.ProductID, c.City
+)
+
+SELECT t.ProductID, t.AvgPrice, c.City
+FROM Top5ProductInfo t JOIN CityQuantities c ON t.ProductID = c.ProductID
+WHERE c.RowNum = 1
 
 -- QUESTION 9
 
