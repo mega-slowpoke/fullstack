@@ -105,3 +105,51 @@ cte: common table experssion (just a temporary table set). It can make sql query
 
 ### recursive cte
 recursive cte is useful when it comes to hierarchy structure
+
+
+
+## temp table
+
+### local temp table
+only can be seen in the current session (connection)
+
+### global temp table
+can be seen in all session, but it can only be modified by the connection creates global temp table
+
+
+## View
+Just a virtual table
+
+lifescope: persisted in the database as long as you do not drop them
+
+
+
+## stored procedure
+a prepared sql query that we can save in our database and reuse it whenever we want to
+
+lifescope: persisted in the database as long as you do not drop them
+
+Advantages:
+1. can be reused so we can reduce duplicate code
+2. sp can be used to prevent sql injection becuase it can take parameters.
+
+
+### trigger
+a special type of stored procedure that will automaically run when there is an event that occurs. 
+
+--DML trigger
+--DDL trigger
+--LogON trigger
+
+
+
+
+## FUNCTIONS
+
+
+## stored procedure vs. user defined function
+1. Usuage: use sp for DML statements and udf for calculations
+2. How to call: exec sp, udf are used in sql statements
+3. input/output: sp may or may not have input or output params but for udf, it may or may not have input params but it must have output 
+4. you can use sp to call a udf, but you can not use udf to call sp.
+

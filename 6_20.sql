@@ -93,4 +93,6 @@ FROM MostOrder o JOIN MostQuantity q ON o.City = q.ShipCity
 WHERE o.RNK = 1 AND q.RNK = 1
 
 -- QUESTION 11
--- We can use DISTINCT keyword
+-- We can use DISTINCT keyword, for example
+SELECT DISTINCT ShipCity
+FROM Orders
