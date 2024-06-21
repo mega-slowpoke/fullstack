@@ -22,12 +22,21 @@ FROM Orders o JOIN [Order Details] od ON o.OrderID = od.OrderID JOIN Products p 
 GROUP BY p.ProductID, p.ProductName
 
 -- QUESTION 4
-
+SELECT c.City, SUM(od.Quantity) AS TotalNum
+FROM Orders o JOIN [Order Details] od ON od.OrderID = o.OrderID JOIN Customers c ON c.CustomerID = o.CustomerID
+GROUP BY c.City
 
 -- QUESTION 5
-
+SELECT City
+FROM Customers
+GROUP BY City
+HAVING COUNT(*) >= 2
 
 -- QUESTION 6
+SELECT C.City, COUNT(DISTINCT od.ProductID) AS ProductType
+FROM Customers c JOIN Orders o ON o.CustomerID = c.CustomerID JOIN [Order Details] od ON od.OrderID = o.OrderID
+GROUP BY C.City 
+HAVING COUNT(DISTINCT od.ProductID) >= 2
 
 -- QUESTION 7
 SELECT DISTINCT c.CustomerID, c.City, o.ShipCity
