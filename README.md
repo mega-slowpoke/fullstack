@@ -1,4 +1,4 @@
-### SQL Basic
+## SQL Basic
 
 #### WHERE vs HAVING
 Similarity: Both are used to filter the record
@@ -11,7 +11,7 @@ Diff:
 
 
 
-### SQL EXECUTION ORDER
+## SQL EXECUTION ORDER
 
     SELECT
     FROM JOIN
@@ -27,7 +27,7 @@ FROM/JOIN --> WHERE --> GROUP BY --> HAVING --> SELECT --> DISTINCT --> ORDER BY
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;cannot use alias in select
 
-
+## Subquery
 ### JOIN vs. Subquery
 1. Join can only be used from clause but subquery can be used anywhere (ORDER BY, WHERE, HAVING)
 2. Subquery is easy to maintain and understand
@@ -47,10 +47,6 @@ A correlated subquery can get the same result without GROUP BY. GROUP BY is so e
 Correlated subquery: an inner query dependent on the outer query
 
 
-#### derived table
-A subquery after in a FROM clause we have to give derived table an alias
-
-
 ### UNION vs. UNION ALL
 Similarity:
 1. number of columns should be same
@@ -63,3 +59,49 @@ Diff:
 
 
 ## Window Function
+
+window function can only used in SELECT OR ORDER BY clauses
+
+### RANK
+    SELECT ..., RANK() OVER(ORDER BY ...) AS RNK
+
+there will be a value gap when there is a tie
+
+    Product     SoldNum     RNK
+    Shoe          100        1
+    T-Shirt       100        1
+    Hat            72        3  (value gap 1->3)
+
+### DENSE_RANK
+it can avoid value gap
+
+### ROW_NUMBER
+    SELECT ..., ROW_NUMBER() OVER(ORDER BY ...) AS RowNum
+
+get the current row number
+
+### Partition By
+partition table into different parts, each part has its own rank
+
+    SELECT ..., RANK() OVER(PARTION BY ... ORDER BY ...)
+
+
+## derived table vs. cte
+A subquery after in a FROM clause we have to give derived table an alias
+    
+    SELECT *
+    FROM (SELECT ... FROM ...) AS dt
+
+cte: common table experssion (just a temporary table set). It can make sql query easier to read
+    
+    WITH cte
+    AS (SELECT ... FROM ...)
+
+    SELECT * 
+    FROM customer c JOIN cte ON ... 
+
+1. A cte has to be used in the next SELECT query right away. 
+2. A cte has to be used in the same batch
+
+### recursive cte
+recursive cte is useful when it comes to hierarchy structure
