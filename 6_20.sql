@@ -76,8 +76,21 @@ FROM Employees e LEFT JOIN (Customers c JOIN Orders o ON c.CustomerID = o.Custom
 WHERE c.CustomerID IS NULL
 
 -- QUESTION 10
+With MostOrder AS (
+	SELECT e.City, COUNT(o.OrderID) AS TotalOrder, RANK() OVER(ORDER BY COUNT(o.OrderID) DESC) AS RNK
+    FROM Orders o JOIN Employees e ON e.EmployeeID = o.EmployeeID
+    GROUP BY e.City
+),
 
+MostQuantity AS (
+	SELECT o.ShipCity, SUM(od.Quantity) AS TotalQuantity, RANK() OVER(ORDER BY SUM(od.Quantity) DESC) AS RNK
+	FROM [Order Details] od JOIN Orders o ON o.OrderID = od.OrderID
+	GROUP BY o.ShipCity
+)
 
+SELECT *
+FROM MostOrder o JOIN MostQuantity q ON o.City = q.ShipCity 
+WHERE o.RNK = 1 AND q.RNK = 1
 
 -- QUESTION 11
 -- We can use DISTINCT keyword
