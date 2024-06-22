@@ -171,3 +171,18 @@ a special type of stored procedure that will automaically run when there is an e
 2. One table can have multiple unique keys but only one primary key
 3. Primary key will sort the data by default in ascending order but unique key will not. 
 4. pk will create a clustered index and unique key will create a non clustered index
+
+
+## Transcation
+
+### ACID
+
+
+### Concurrency Problem
+
+|        |    Dirty Read   |   Unreapetable Read     |  Phantom Read      |
+|  ----  | ----  |  ----  | ----  | 
+|  Read uncommitted  | √  |  √  | √  |
+|  Read committed (default) | ×  |  √  | √  |
+|  Repeatable read  | ×  |  ×  | √  |
+|  Serializable  | × |  ×  | ×  | 
