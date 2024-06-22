@@ -9,7 +9,17 @@ Diff:
 2. WHERE executes before GROUP BY but HAVING executes after GROUP BY
 3. WHERE can be used with select, update, and delete
 
+### DROP vs. TRUNCATE vs. DELETE
+1. DELETE is DML, DROP and TRUNCATE are DDLs
+    `DROP TABLE ...`
+    `TRUNCATE TABLE ...`
+    `DELETE FROM ... WHERE ...`
+2. DROP will remove the entire table (this table will not exist any more). TRUNCATE and DELETE will just remove data in the table.
+3. DELETE will not reset property value while TRUNCATE will
 
+
+### IDENTITY (AUTO_INCREMEMT)
+we cannot insert a row with explicit value of identity column unless we set IDENTITY_INSERT on
 
 ## SQL EXECUTION ORDER
 
@@ -153,3 +163,11 @@ a special type of stored procedure that will automaically run when there is an e
 3. input/output: sp may or may not have input or output params but for udf, it may or may not have input params but it must have output 
 4. you can use sp to call a udf, but you can not use udf to call sp.
 
+
+## Constraints
+
+### primary key vs. unique constraint
+1. unique key can be null but primary key cannot
+2. One table can have multiple unique keys but only one primary key
+3. Primary key will sort the data by default in ascending order but unique key will not. 
+4. pk will create a clustered index and unique key will create a non clustered index
