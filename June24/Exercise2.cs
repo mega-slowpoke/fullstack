@@ -221,7 +221,7 @@
     }
     
     /*
-     * Practice 6
+     * Practice 7
      */
     public static int MostFrequentNumber(int[] arr)
     {
@@ -254,6 +254,152 @@
         return res;
     }
     
+    
+    /*
+     * 1
+     */
+
+    public void reverseStr1()
+    {
+        Console.WriteLine("Enter string: ");
+        string input = Console.ReadLine();
+        
+        char[] charArray = input.ToCharArray();
+        string reversed = new string(charArray);
+        
+        Console.WriteLine($"Reversed string: {reversed}");
+    }
+    
+    public void reverseStr2()
+    {
+        Console.WriteLine("Enter string: ");
+        string input = Console.ReadLine();
+
+
+        for (int i = input.Length - 1; i >= 0; i--)
+        {
+            Console.Write(input[i]);
+        }
+    }
+
+    private void MyReverse(char[] chars, int start, int end)
+    {
+        while (start < end)
+        {
+            char temp = chars[start];
+            chars[start] = chars[end];
+            chars[end] = temp;
+            start++;
+            end--;
+        }
+    }
+    
+    /*
+     * 2
+     */
+    public string ReverseSentence(string sentence)
+    {
+        char[] separators = { '.', ',', ':', ';', '=', '(', ')', '&', '[', ']', '"', '\'', '\\', '/', '!', '?', ' ' };
+
+        // Split the sentence into words and separators
+        List<string> parts = new List<string>();
+        List<char> separatorsFound = new List<char>();
+
+        int startIndex = 0;
+        for (int i = 0; i < sentence.Length; i++)
+        {
+            char currentChar = sentence[i];
+            if (Array.IndexOf(separators, currentChar) != -1)
+            {
+                // Found a separator
+                parts.Add(sentence.Substring(startIndex, i - startIndex));
+                separatorsFound.Add(currentChar);
+                startIndex = i + 1;
+            }
+        }
+        if (startIndex < sentence.Length)
+        {
+            parts.Add(sentence.Substring(startIndex));
+        }
+
+        parts.Reverse();
+
+        string reversedSentence = "";
+        for (int i = 0; i < parts.Count; i++)
+        {
+            reversedSentence += parts[i];
+            if (i < separatorsFound.Count)
+            {
+                reversedSentence += separatorsFound[i];
+            }
+        }
+
+        return reversedSentence.Trim();
+    }
+    
+    /*
+     * 3
+     */
+    public void FindPalindromes(string text)
+    {
+        HashSet<string> palindromeSet = new HashSet<string>();
+        string[] strs = text.Split(" ");
+        foreach (string str in strs)
+        {
+            if (IsPalindrome(str))
+            {
+                palindromeSet.Add(str);
+            }
+        }
+        
+        string[] sortedPalindromes = palindromeSet.OrderBy(p => p).ToArray();
+        string result = string.Join(", ", sortedPalindromes);
+        Console.WriteLine(result);
+    }
+    
+    private bool IsPalindrome(string word)
+    {
+        int left = 0;
+        int right = word.Length - 1;
+        
+        while (left < right)
+        {
+            while (left < right && !IsLetter(word[left])) left++;
+            while (left < right && !IsLetter(word[right])) right--;
+            
+            if (word[left] != word[right])
+            {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        
+        return true;
+    }
+
+    private bool IsLetter(char c)
+    {
+        return (c <= 'z' && c >= 'a') || (c <= 'Z' && c >= 'A');
+    }
+    
+    
+    /*
+     * 4
+     */
+    public void Parse(string url)
+    {
+        string[] tempStrs = url.Split("://");
+        string protocol = tempStrs[0];
+        
+        string[] serverResourceSplit = tempStrs[1].Split("/"); 
+        string server = serverResourceSplit[0]; 
+        string resource = serverResourceSplit.Length > 1 ? serverResourceSplit[1] : ""; 
+        
+        Console.WriteLine("[protocol] = " + protocol);
+        Console.WriteLine("[server] = " + server);
+        Console.WriteLine("[resource] = " + resource);
+    }
     
 }
 
