@@ -274,3 +274,9 @@ void Count24()
     }
 }
 
+Exercise2 ex = new Exercise2();
+int[] res = ex.LongestSubarray(new int[]{0 ,1, 1, 5, 2, 2, 6, 3, 3});
+for (int i = 0; i < res.Length; i++)
+{
+    Console.Write(res[i] + " ");
+}
