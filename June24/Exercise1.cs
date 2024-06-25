@@ -50,18 +50,19 @@ void NameGenerator()
 
 void PrintTypeSize()
 {
-    Console.WriteLine($"sbtye: {sizeof(sbyte)}, range: ");
-    Console.WriteLine(sizeof(byte));
-    Console.WriteLine(sizeof(short));
-    Console.WriteLine(sizeof(ushort));
-    Console.WriteLine(sizeof(int));
-    Console.WriteLine(sizeof(uint));
-    Console.WriteLine(sizeof(long));
-    Console.WriteLine(sizeof(ulong));
-    Console.WriteLine(sizeof(float));
-    Console.WriteLine(sizeof(double));
-    Console.WriteLine(sizeof(decimal));
+    Console.WriteLine($"sbyte: {sizeof(sbyte)}, range: {sbyte.MinValue} to {sbyte.MaxValue}");
+    Console.WriteLine($"byte: {sizeof(byte)}, range: {byte.MinValue} to {byte.MaxValue}");
+    Console.WriteLine($"short: {sizeof(short)}, range: {short.MinValue} to {short.MaxValue}");
+    Console.WriteLine($"ushort: {sizeof(ushort)}, range: {ushort.MinValue} to {ushort.MaxValue}");
+    Console.WriteLine($"int: {sizeof(int)}, range: {int.MinValue} to {int.MaxValue}");
+    Console.WriteLine($"uint: {sizeof(uint)}, range: {uint.MinValue} to {uint.MaxValue}");
+    Console.WriteLine($"long: {sizeof(long)}, range: {long.MinValue} to {long.MaxValue}");
+    Console.WriteLine($"ulong: {sizeof(ulong)}, range: {ulong.MinValue} to {ulong.MaxValue}");
+    Console.WriteLine($"float: {sizeof(float)}, range: {float.MinValue} to {float.MaxValue}");
+    Console.WriteLine($"double: {sizeof(double)}, range: {double.MinValue} to {double.MaxValue}");
+    Console.WriteLine($"decimal: {sizeof(decimal)}, range: {decimal.MinValue} to {decimal.MaxValue}");
 }
+
 
 void CenturyConverter(int century)
 {
@@ -132,6 +133,8 @@ void FizzBuzz()
 }
 
 /*
+ * 1.1
+ * 
  * The following code will cause a infinite loop because byte in c# can only hold number
  * 0-255, whenever i reach 255, it will become 0 next time
  *
@@ -146,6 +149,9 @@ void ByteOverflow()
     }
 }
 
+/*
+ * 1.2
+ */
 void GuessNumber()
 {
     int randomNumber = new Random().Next(3) + 1;
@@ -174,8 +180,97 @@ void GuessNumber()
     }
 }
 
-
-void PrintPyramid()
+/*
+ * 2
+ */
+void PrintPyramid(int level)
 {
-    
+    for (int i = 0; i < level; i++)
+    {
+        for (int space = 0; space < level - i - 1; space++) 
+        { 
+            Console.Write(" ");
+        }
+
+        for (int star = 0; star < i * 2 +1; star++)
+        {
+            Console.Write("*");
+        }
+        
+        Console.WriteLine();
+    }
 }
+
+/*
+ * 3 is duplicate of 1.2
+ */
+ 
+ 
+/*
+ * 4
+ * dateOfBirth 1980-01-01
+ */
+int GetAge(string dateOfBirth)
+{
+    int year = int.Parse(dateOfBirth.Substring(0, 4));
+    int month = int.Parse(dateOfBirth.Substring(5, 2));
+    int day = int.Parse(dateOfBirth.Substring(8, 2));
+
+    DateTime birth = new DateTime(year, month, day);
+    int diff = DateTime.Today.Year - birth.Year;
+
+    if (DateTime.Today.Month < birth.Month || (DateTime.Today.Month == birth.Month && DateTime.Today.Day < birth.Day))
+    {
+        diff--;
+    }
+
+    return diff;
+}
+
+/*
+ * 5
+ */
+void Greet()
+{
+    int curHour = DateTime.Now.Hour;
+    
+    if (curHour >= 6 && curHour < 12)
+    {
+        Console.WriteLine("Good Morning");
+    }
+
+    if (curHour >= 12 && curHour < 18)
+    {
+        Console.WriteLine("Good Afternoon");
+    }
+
+    if (curHour >= 18)
+    {
+        Console.WriteLine("Good Evening");
+    }
+
+    if (curHour < 6)
+    {
+        Console.WriteLine("Good Night");
+    }
+}
+
+/*
+ * 6
+ */
+void Count24()
+{
+    for (int outer = 1; outer <= 4; outer++)
+    {
+        for (int inner = 0; inner <= 24; inner += outer)
+        {
+            if (inner != 0)
+            {
+                Console.Write(",");
+            }
+            Console.Write(inner);
+        }
+        Console.WriteLine();
+    }
+}
+
