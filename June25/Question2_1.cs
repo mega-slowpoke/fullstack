@@ -1,6 +1,6 @@
 ﻿namespace Main;
 
-public class Coding1
+public class Question2_1
 {
     
     public static int[] GenerateNumbers(int size)
