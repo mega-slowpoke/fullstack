@@ -1,0 +1,15 @@
+D:\antra\c#\June26\bin\Debug\net8.0\June26.exe
+D:\antra\c#\June26\bin\Debug\net8.0\June26.deps.json
+D:\antra\c#\June26\bin\Debug\net8.0\June26.runtimeconfig.json
+D:\antra\c#\June26\bin\Debug\net8.0\June26.dll
+D:\antra\c#\June26\bin\Debug\net8.0\June26.pdb
+D:\antra\c#\June26\obj\Debug\net8.0\June26.GeneratedMSBuildEditorConfig.editorconfig
+D:\antra\c#\June26\obj\Debug\net8.0\June26.AssemblyInfoInputs.cache
+D:\antra\c#\June26\obj\Debug\net8.0\June26.AssemblyInfo.cs
+D:\antra\c#\June26\obj\Debug\net8.0\June26.csproj.CoreCompileInputs.cache
+D:\antra\c#\June26\obj\Debug\net8.0\June26.sourcelink.json
+D:\antra\c#\June26\obj\Debug\net8.0\June26.dll
+D:\antra\c#\June26\obj\Debug\net8.0\refint\June26.dll
+D:\antra\c#\June26\obj\Debug\net8.0\June26.pdb
+D:\antra\c#\June26\obj\Debug\net8.0\June26.genruntimeconfig.cache
+D:\antra\c#\June26\obj\Debug\net8.0\ref\June26.dll
