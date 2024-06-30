@@ -1,0 +1,15 @@
+D:\antra\c#\Evaluation\bin\Debug\net8.0\Evaluation.exe
+D:\antra\c#\Evaluation\bin\Debug\net8.0\Evaluation.deps.json
+D:\antra\c#\Evaluation\bin\Debug\net8.0\Evaluation.runtimeconfig.json
+D:\antra\c#\Evaluation\bin\Debug\net8.0\Evaluation.dll
+D:\antra\c#\Evaluation\bin\Debug\net8.0\Evaluation.pdb
+D:\antra\c#\Evaluation\obj\Debug\net8.0\Evaluation.GeneratedMSBuildEditorConfig.editorconfig
+D:\antra\c#\Evaluation\obj\Debug\net8.0\Evaluation.AssemblyInfoInputs.cache
+D:\antra\c#\Evaluation\obj\Debug\net8.0\Evaluation.AssemblyInfo.cs
+D:\antra\c#\Evaluation\obj\Debug\net8.0\Evaluation.csproj.CoreCompileInputs.cache
+D:\antra\c#\Evaluation\obj\Debug\net8.0\Evaluation.sourcelink.json
+D:\antra\c#\Evaluation\obj\Debug\net8.0\Evaluation.dll
+D:\antra\c#\Evaluation\obj\Debug\net8.0\refint\Evaluation.dll
+D:\antra\c#\Evaluation\obj\Debug\net8.0\Evaluation.pdb
+D:\antra\c#\Evaluation\obj\Debug\net8.0\Evaluation.genruntimeconfig.cache
+D:\antra\c#\Evaluation\obj\Debug\net8.0\ref\Evaluation.dll
