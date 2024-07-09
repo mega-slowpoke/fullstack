@@ -1,0 +1,15 @@
+D:\antra\c#\June25\bin\Debug\net8.0\Main.exe
+D:\antra\c#\June25\bin\Debug\net8.0\Main.deps.json
+D:\antra\c#\June25\bin\Debug\net8.0\Main.runtimeconfig.json
+D:\antra\c#\June25\bin\Debug\net8.0\Main.dll
+D:\antra\c#\June25\bin\Debug\net8.0\Main.pdb
+D:\antra\c#\June25\obj\Debug\net8.0\Main.GeneratedMSBuildEditorConfig.editorconfig
+D:\antra\c#\June25\obj\Debug\net8.0\Main.AssemblyInfoInputs.cache
+D:\antra\c#\June25\obj\Debug\net8.0\Main.AssemblyInfo.cs
+D:\antra\c#\June25\obj\Debug\net8.0\Main.csproj.CoreCompileInputs.cache
+D:\antra\c#\June25\obj\Debug\net8.0\Main.sourcelink.json
+D:\antra\c#\June25\obj\Debug\net8.0\Main.dll
+D:\antra\c#\June25\obj\Debug\net8.0\refint\Main.dll
+D:\antra\c#\June25\obj\Debug\net8.0\Main.pdb
+D:\antra\c#\June25\obj\Debug\net8.0\Main.genruntimeconfig.cache
+D:\antra\c#\June25\obj\Debug\net8.0\ref\Main.dll

@@ -1,0 +1,15 @@
+D:\antra\c#\June24\bin\Debug\net8.0\June24.exe
+D:\antra\c#\June24\bin\Debug\net8.0\June24.deps.json
+D:\antra\c#\June24\bin\Debug\net8.0\June24.runtimeconfig.json
+D:\antra\c#\June24\bin\Debug\net8.0\June24.dll
+D:\antra\c#\June24\bin\Debug\net8.0\June24.pdb
+D:\antra\c#\June24\obj\Debug\net8.0\June24.GeneratedMSBuildEditorConfig.editorconfig
+D:\antra\c#\June24\obj\Debug\net8.0\June24.AssemblyInfoInputs.cache
+D:\antra\c#\June24\obj\Debug\net8.0\June24.AssemblyInfo.cs
+D:\antra\c#\June24\obj\Debug\net8.0\June24.csproj.CoreCompileInputs.cache
+D:\antra\c#\June24\obj\Debug\net8.0\June24.sourcelink.json
+D:\antra\c#\June24\obj\Debug\net8.0\June24.dll
+D:\antra\c#\June24\obj\Debug\net8.0\refint\June24.dll
+D:\antra\c#\June24\obj\Debug\net8.0\June24.pdb
+D:\antra\c#\June24\obj\Debug\net8.0\June24.genruntimeconfig.cache
+D:\antra\c#\June24\obj\Debug\net8.0\ref\June24.dll
